@@ -3,5 +3,6 @@ streamlit-shap==1.0.2
 shap==0.40.0
 scikit-learn==1.0.2
 xgboost==1.6.0
-numpy==1.22.3
+numpy
+pandas
 click==8
