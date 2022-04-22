@@ -1,4 +1,5 @@
 streamlit
 streamlit-shap
+scikit-learn==1.0.2
 xgboost==1.6.0
 click==8
