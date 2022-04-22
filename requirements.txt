@@ -1,3 +1,4 @@
 streamlit
 streamlit-shap
+xgboost==1.6.0
 click==8
