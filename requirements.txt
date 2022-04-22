@@ -1,6 +1,6 @@
-streamlit==1.8.1
-streamlit-shap==1.0.2
-shap==0.40.0
-scikit-learn==1.0.2
+streamlit
+streamlit-shap
+shap
+scikit-learn
 pandas
 click==8
