@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 #from streamlit_shap import st_shap
-#import shap
+import shap
 
 st.title('Feature importance with streamlit-shap')
 
