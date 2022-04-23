@@ -1,6 +1,6 @@
 streamlit==1.7
 streamlit-shap
-shap
+shap==0.40.0
 scikit-learn
 pandas
 xgboost
