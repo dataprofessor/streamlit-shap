@@ -29,7 +29,7 @@ def load_model(X, y):
     model = xgboost.train(params, d_train, 10, evals = [(d_test, "test")], verbose_eval=100, early_stopping_rounds=20)
     return model
 
-st.title("SHAP in Streamlit")
+st.title("SHAP plots in Streamlit")
 
 # train XGBoost model
 X,y = load_data()
@@ -41,7 +41,9 @@ model = load_model(X, y)
 explainer = shap.Explainer(model, X)
 shap_values = explainer(X)
 
-st_shap(shap.plots.waterfall(shap_values[0]), height=300)
+with st.expander('Waterfall plot'):
+    st_shap(shap.plots.waterfall(shap_values[0]), height=300)
+
 st_shap(shap.plots.beeswarm(shap_values), height=300)
 
 explainer = shap.TreeExplainer(model)
