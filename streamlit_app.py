@@ -1,13 +1,12 @@
 import streamlit as st
 from streamlit_shap import st_shap
 import shap
-
 from sklearn.model_selection import train_test_split
 import xgboost
-
 import numpy as np
 import pandas as pd
 
+st.set_page_config(layout="wide")
 
 @st.experimental_memo
 def load_data():
@@ -43,11 +42,12 @@ shap_values = explainer(X)
 
 with st.expander('Waterfall plot'):
     st_shap(shap.plots.waterfall(shap_values[0]), height=300)
-
-st_shap(shap.plots.beeswarm(shap_values), height=300)
+with st.expander('Beeswarm plot'):
+    st_shap(shap.plots.beeswarm(shap_values), height=300)
 
 explainer = shap.TreeExplainer(model)
 shap_values = explainer.shap_values(X)
 
-st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:], X_display.iloc[0,:]), height=200, width=1000)
-st_shap(shap.force_plot(explainer.expected_value, shap_values[:1000,:], X_display.iloc[:1000,:]), height=400, width=1000)
+with st.expander('Force plot'):
+    st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:], X_display.iloc[0,:]), height=200, width=1000)
+    st_shap(shap.force_plot(explainer.expected_value, shap_values[:1000,:], X_display.iloc[:1000,:]), height=400, width=1000)
