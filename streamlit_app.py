@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_shap import st_shap
 import shap
-from shap.plots import *
+from shap import plots
 
 from sklearn.model_selection import train_test_split
 import xgboost
