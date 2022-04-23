@@ -49,5 +49,7 @@ explainer = shap.TreeExplainer(model)
 shap_values = explainer.shap_values(X)
 
 with st.expander('Force plot'):
+    st.subheader('First data instance')
     st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:], X_display.iloc[0,:]), height=200, width=1000)
+    st.subheader('First thousand data instance')
     st_shap(shap.force_plot(explainer.expected_value, shap_values[:1000,:], X_display.iloc[:1000,:]), height=400, width=1000)
