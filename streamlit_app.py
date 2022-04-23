@@ -38,8 +38,8 @@ X_display,y_display = shap.datasets.adult(display=True)
 model = load_model(X, y)
 
 # compute SHAP values
-#explainer = shap.Explainer(model, X)
-#shap_values = explainer(X)
+explainer = shap.Explainer(model, X)
+shap_values = explainer(X)
 
 #st_shap(shap.plots.waterfall(shap_values[0]), height=300)
 #st_shap(shap.plots.beeswarm(shap_values), height=300)
