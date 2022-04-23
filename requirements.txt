@@ -1,6 +1,7 @@
 streamlit==1.7
 streamlit-shap
 shap==0.40.0
+matplotlib
 scikit-learn
 pandas
 xgboost
