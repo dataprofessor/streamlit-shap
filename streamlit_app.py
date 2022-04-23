@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit_shap import st_shap
 import shap
-from shap import plots
 
 from sklearn.model_selection import train_test_split
 import xgboost
@@ -39,8 +38,8 @@ X_display,y_display = shap.datasets.adult(display=True)
 model = load_model(X, y)
 
 # compute SHAP values
-explainer = shap.Explainer(model, X)
-shap_values = explainer(X)
+#explainer = shap.Explainer(model, X)
+#shap_values = explainer(X)
 
 #st_shap(shap.plots.waterfall(shap_values[0]), height=300)
 #st_shap(shap.plots.beeswarm(shap_values), height=300)
