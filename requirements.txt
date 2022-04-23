@@ -3,4 +3,5 @@ streamlit-shap
 shap
 scikit-learn
 pandas
+xgboost
 click==8
