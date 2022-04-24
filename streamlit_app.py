@@ -30,6 +30,11 @@ def load_model(X, y):
 
 st.title("`streamlit-shap` for displaying SHAP plots in a Streamlit app")
 
+with st.expander('About the app'):
+    st.markdown('''[`streamlit-shap`](https://github.com/snehankekre/streamlit-shap) is a Streamlit component that provides a wrapper to display [SHAP](https://github.com/slundberg/shap) plots in [Streamlit](https://streamlit.io/). 
+                    The library is developed by our in-house staff [Snehan Kekre](https://github.com/snehankekre) who also maintains the [Streamlit Documentation](https://docs.streamlit.io/) website.
+                ''')
+
 # train XGBoost model
 X,y = load_data()
 X_display,y_display = shap.datasets.adult(display=True)
