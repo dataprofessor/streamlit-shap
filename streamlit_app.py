@@ -36,13 +36,13 @@ with st.expander('About the app'):
                 ''')
 
 st.header('Input data')
-st.write( shap.datasets.adult(display=True) )
-st.header('SHAP output')
- 
-# train XGBoost model
 X,y = load_data()
 X_display,y_display = shap.datasets.adult(display=True)
 
+st.write(pd.DataFrame(X))
+st.header('SHAP output')
+ 
+# train XGBoost model
 model = load_model(X, y)
 
 # compute SHAP values
