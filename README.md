@@ -1,10 +1,10 @@
-# st.template
+# streamlit-shap
 
-`st.template` allows writing text and arguments to the Streamlit app.
+`streamlit-shap` is a Streamlit component developed by Streamlit documentation writer Snehan Kekre [[1]](https://github.com/snehankekre/streamlit-shap).
 
 ## Demo app
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/dataprofessor/st.template/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/dataprofessor/streamlit-shap/)
 
 ## Code
 Here's how to use `st.write`:
