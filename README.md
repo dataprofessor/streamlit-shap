@@ -1,6 +1,19 @@
 # streamlit-shap
 
-`streamlit-shap` is a Streamlit component developed by Streamlit documentation writer Snehan Kekre [[1]](https://github.com/snehankekre/streamlit-shap).
+`streamlit-shap` is a Streamlit component that provides a wrapper to display [SHAP](https://github.com/slundberg/shap) plots in [Streamlit](https://streamlit.io/). `streamlit-shap` is developed by our in-house staff Snehan Kekre [[1]](https://github.com/snehankekre/streamlit-shap) who also maintains the Streamlit Documentation website.
+
+Firstly, install Streamlit (of course!) then pip install the `streamlit-shap` library:
+```bash
+pip install streamlit
+pip install streamlit-shap
+```
+
+There are also other prerequisite libraries to install if you haven't yet done so:
+```bash
+pip install matplotlib
+pip install scikit-learn
+```
+
 
 ## Demo app
 
