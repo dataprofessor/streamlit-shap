@@ -1,6 +1,6 @@
-streamlit==1.7
+streamlit
 streamlit-shap
-shap==0.40.0
+shap
 matplotlib
 scikit-learn
 pandas
