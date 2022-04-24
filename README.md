@@ -1,6 +1,6 @@
 # streamlit-shap
 
-`streamlit-shap` is a Streamlit component that provides a wrapper to display [SHAP](https://github.com/slundberg/shap) plots in [Streamlit](https://streamlit.io/). [`streamlit-shap`](https://github.com/snehankekre/streamlit-shap) is developed by our in-house staff Snehan Kekre who also maintains the Streamlit Documentation website.
+`streamlit-shap` is a Streamlit component that provides a wrapper to display [SHAP](https://github.com/slundberg/shap) plots in [Streamlit](https://streamlit.io/). [`streamlit-shap`](https://github.com/snehankekre/streamlit-shap) is developed by our in-house staff Snehan Kekre who also maintains the [Streamlit Documentation](https://docs.streamlit.io/) website.
 
 Firstly, install Streamlit (of course!) then pip install the `streamlit-shap` library:
 ```bash
@@ -144,7 +144,7 @@ with st.expander('Beeswarm plot'):
     st_shap(shap.plots.beeswarm(shap_values), height=300)
 ```
 
-
+Finally, the Tree SHAP algorithms is used to explain the output of ensemble tree models via the `shap.TreeExplainer` command and visualized via the `shap.force_plot` command:
 ```python
 explainer = shap.TreeExplainer(model)
 shap_values = explainer.shap_values(X)
