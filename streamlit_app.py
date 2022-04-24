@@ -39,7 +39,10 @@ st.header('Input data')
 X,y = load_data()
 X_display,y_display = shap.datasets.adult(display=True)
 
-st.write(pd.DataFrame(X))
+with st.expander('X'):
+    st.dataframe(X)
+with st.expander('y'):
+    st.dataframe(y)
 st.header('SHAP output')
  
 # train XGBoost model
