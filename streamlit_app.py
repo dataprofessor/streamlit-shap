@@ -39,7 +39,8 @@ st.header('Input data')
 X,y = load_data()
 X_display,y_display = shap.datasets.adult(display=True)
 
-st.write('Adult census data is used as the example dataset.')
+with st.expander('About the data'):
+    st.write('Adult census data is used as the example dataset.')
 with st.expander('X'):
     st.dataframe(X)
 with st.expander('y'):
