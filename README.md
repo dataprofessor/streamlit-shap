@@ -52,10 +52,25 @@ def load_model(X, y):
 
 st.title("`streamlit-shap` for displaying SHAP plots in a Streamlit app")
 
-# train XGBoost model
+with st.expander('About the app'):
+    st.markdown('''[`streamlit-shap`](https://github.com/snehankekre/streamlit-shap) is a Streamlit component that provides a wrapper to display [SHAP](https://github.com/slundberg/shap) plots in [Streamlit](https://streamlit.io/). 
+                    The library is developed by our in-house staff [Snehan Kekre](https://github.com/snehankekre) who also maintains the [Streamlit Documentation](https://docs.streamlit.io/) website.
+                ''')
+
+st.header('Input data')
 X,y = load_data()
 X_display,y_display = shap.datasets.adult(display=True)
 
+with st.expander('About the data'):
+    st.write('Adult census data is used as the example dataset.')
+with st.expander('X'):
+    st.dataframe(X)
+with st.expander('y'):
+    st.dataframe(y)
+
+st.header('SHAP output')
+ 
+# train XGBoost model
 model = load_model(X, y)
 
 # compute SHAP values
@@ -123,6 +138,33 @@ def load_model(X, y):
 The title of the Streamlit app is then displayed:
 ```python
 st.title("`streamlit-shap` for displaying SHAP plots in a Streamlit app")
+```
+
+An about expander box is implemented to provide details of the app:
+```python
+with st.expander('About the app'):
+    st.markdown('''[`streamlit-shap`](https://github.com/snehankekre/streamlit-shap) is a Streamlit component that provides a wrapper to display [SHAP](https://github.com/slundberg/shap) plots in [Streamlit](https://streamlit.io/). 
+                    The library is developed by our in-house staff [Snehan Kekre](https://github.com/snehankekre) who also maintains the [Streamlit Documentation](https://docs.streamlit.io/) website.
+                ''')
+```
+
+Here, we'll display the header text along with expander box of the `X` and `y` variables of the Input data:
+```python
+st.header('Input data')
+X,y = load_data()
+X_display,y_display = shap.datasets.adult(display=True)
+
+with st.expander('About the data'):
+    st.write('Adult census data is used as the example dataset.')
+with st.expander('X'):
+    st.dataframe(X)
+with st.expander('y'):
+    st.dataframe(y)
+```
+
+Here, we'll display the header text for the forthcoming SHAP output:
+```python
+st.header('SHAP output')
 ```
 
 The XGBoost model is then built by using the `load_model` function that was just implemented above. Finally, 
