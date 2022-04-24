@@ -36,7 +36,7 @@ with st.expander('About the app'):
                 ''')
 
 st.header('Input data')
-st.write(load_data())
+st.write( shap.datasets.adult(display=True) )
 st.header('SHAP output')
  
 # train XGBoost model
