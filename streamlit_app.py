@@ -36,7 +36,7 @@ with st.expander('About the app'):
                 ''')
 
 st.header('Input data')
-st.write(pd.DataFrame(load_data()))
+st.dataframe(load_data())
 st.header('SHAP output')
  
 # train XGBoost model
