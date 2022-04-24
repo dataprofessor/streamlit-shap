@@ -35,6 +35,10 @@ with st.expander('About the app'):
                     The library is developed by our in-house staff [Snehan Kekre](https://github.com/snehankekre) who also maintains the [Streamlit Documentation](https://docs.streamlit.io/) website.
                 ''')
 
+st.header('Input data')
+st.write(load_data())
+st.header('SHAP output')
+ 
 # train XGBoost model
 X,y = load_data()
 X_display,y_display = shap.datasets.adult(display=True)
