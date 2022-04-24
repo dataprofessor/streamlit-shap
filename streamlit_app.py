@@ -28,7 +28,7 @@ def load_model(X, y):
     model = xgboost.train(params, d_train, 10, evals = [(d_test, "test")], verbose_eval=100, early_stopping_rounds=20)
     return model
 
-st.title("`streamlit-shap` for displaying SHAP plots in Streamlit")
+st.title("`streamlit-shap` for displaying SHAP plots in a Streamlit app")
 
 # train XGBoost model
 X,y = load_data()
