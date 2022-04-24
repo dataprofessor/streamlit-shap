@@ -8,7 +8,7 @@ pip install streamlit
 pip install streamlit-shap
 ```
 
-There are also other prerequisite libraries to install (e.g. `matplotlib`, `pandas`, scikit-learn` and `xgboost`) if you haven't yet done so.
+There are also other prerequisite libraries to install (e.g. `matplotlib`, `pandas`, `scikit-learn` and `xgboost`) if you haven't yet done so.
 
 
 ## Demo app
@@ -87,16 +87,19 @@ import numpy as np
 import pandas as pd
 ```
 
+Next, we'll set the page layout to be wide such that contents in the Streamlit app can spread the full page width.
 ```python
 st.set_page_config(layout="wide")
 ```
 
+Then, we'll load in a dataset from the `shap` library:
 ```python
 @st.experimental_memo
 def load_data():
     return shap.datasets.adult()
 ```
 
+Subsequently, we'll definite a function called `load_model` for taking in the `X, y` matrix pair as input, perform data splitting to train/test sets, constructing a `DMatrix` and build an XGBoost model.
 ```python
 @st.experimental_memo
 def load_model(X, y):
@@ -115,10 +118,12 @@ def load_model(X, y):
     return model
 ```
 
+The title of the Streamlit app is then displayed:
 ```python
 st.title("`streamlit-shap` for displaying SHAP plots in a Streamlit app")
 ```
 
+The XGBoost model is then built by using the `load_model` function that was just implemented above. Finally, 
 ```python
 # train XGBoost model
 X,y = load_data()
@@ -127,6 +132,7 @@ X_display,y_display = shap.datasets.adult(display=True)
 model = load_model(X, y)
 ```
 
+Here, we'll compute the SHAP values, which are then used to create the Waterfall and Beeswarm plots.
 ```python
 # compute SHAP values
 explainer = shap.Explainer(model, X)
@@ -137,6 +143,7 @@ with st.expander('Waterfall plot'):
 with st.expander('Beeswarm plot'):
     st_shap(shap.plots.beeswarm(shap_values), height=300)
 ```
+
 
 ```python
 explainer = shap.TreeExplainer(model)
